@@ -4,6 +4,7 @@
 		"isolatedModules": true,
 		"esModuleInterop": true,
 		"jsx": "react",
+		"declaration": true,
 		"outDir": "dist",
 
 		// Node 12
