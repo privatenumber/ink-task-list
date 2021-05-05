@@ -1,32 +1,32 @@
 import React from 'react';
 import { render, Text } from 'ink';
 import spinners from 'cli-spinners';
-import { List, ListItem } from '../src/index';
+import { TaskList, Task } from '../src/index';
 
 const spinnerNames = Object.keys(spinners).filter(spinnerName => spinnerName !== 'default');
 
 render(
-	<List>
+	<TaskList>
 		<Text>
 			=== States ===
 		</Text>
-		<ListItem
+		<Task
 			label="Pending"
 			state="pending"
 		/>
-		<ListItem
+		<Task
 			label="Loading"
 			state="loading"
 		/>
-		<ListItem
+		<Task
 			label="Success"
 			state="success"
 		/>
-		<ListItem
+		<Task
 			label="Warning"
 			state="warning"
 		/>
-		<ListItem
+		<Task
 			label="Error"
 			state="error"
 		/>
@@ -35,57 +35,57 @@ render(
 			=== Nested ===
 		</Text>
 
-		<ListItem
+		<Task
 			label="Item A"
 			state="error"
 			isExpanded
 		>
-			<ListItem
+			<Task
 				label="Item AA"
 			/>
-			<ListItem
+			<Task
 				label="Item AB"
 				isExpanded
 			>
-				<ListItem
+				<Task
 					label="Item ABA"
 					state="loading"
 				/>
-			</ListItem>
-		</ListItem>
+			</Task>
+		</Task>
 
-		<ListItem
+		<Task
 			label="Item B"
 			state="warning"
 		>
-			<ListItem
+			<Task
 				label="Item BA"
 				state="loading"
 			/>
-			<ListItem
+			<Task
 				label="Item BB"
 				state="success"
 			>
-				<ListItem
+				<Task
 					label="Item BBA"
 					state="loading"
 				/>
-				<ListItem
+				<Task
 					label="Item BBB"
 					state="success"
 				>
-					<ListItem
+					<Task
 						label="Item BBBA"
 						state="loading"
 					/>
-					<ListItem
+					<Task
 						label="Item BBBB"
 						state="success"
 					/>
-				</ListItem>
-			</ListItem>
-		</ListItem>
-		<ListItem
+				</Task>
+			</Task>
+		</Task>
+		<Task
 			label="Item C"
 			state="error"
 		/>
@@ -95,7 +95,7 @@ render(
 		</Text>
 		{
 			spinnerNames.map(spinnerType => (
-				<ListItem
+				<Task
 					key={spinnerType}
 					label={spinnerType}
 					spinnerType={spinnerType}
@@ -103,5 +103,5 @@ render(
 				/>
 			))
 		}
-	</List>,
+	</TaskList>,
 );

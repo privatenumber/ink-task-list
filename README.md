@@ -17,53 +17,96 @@ npm i ink-task-runner
 ```tsx
 import React from 'react';
 import { render } from 'ink';
-import { List, ListItem } from 'ink-task-runner';
+import { TaskList, Task } from 'ink-task-runner';
 
 render(
-    <List>
+    <TaskList>
         <!-- Pending state -->
-        <ListItem
+        <Task
             label="Pending"
             state="pending"
         />
 
         <!-- Loading state -->
-        <ListItem
+        <Task
             label="Loading"
             state="loading"
         />
 
         <!-- Success state -->
-        <ListItem
+        <Task
             label="Success"
             state="success"
         />
 
         <!-- Warning state -->
-        <ListItem
+        <Task
             label="Warning"
             state="warning"
         />
 
         <!-- Error state -->
-        <ListItem
+        <Task
             label="Error"
             state="error"
         />
 
         <!-- Item with children -->
-        <ListItem
+        <Task
             label="Item with children"
             isExpanded
         >
-            <ListItem
+            <Task
                 label="Loading"
                 state="loading"
             />
-        </ListItem>
-    </List>
+        </Task>
+    </TaskList>
 );
 ```
+
+## 🎛 API
+
+### TaskList
+
+Optional wrapper to contain a list of `Tasks`.
+
+Basically just a `<Box flexDirection="column">`; only for styling and semantic purposes.
+
+#### children
+Type: `ReactNode | ReactNode[]`
+
+Required
+
+Pass in list of Tasks
+
+### Task
+
+Represents each task.
+
+#### children
+Type: `ReactNode | ReactNode[]`
+
+Pass in one or more `<Task>` components
+
+#### label
+Type: `string`
+
+Required
+#### state
+Type: `'pending'|'loading'|'success'|'warning'|'error'`
+
+Default: `pending`
+
+#### spinnerType
+Type: `string`
+
+Default: `dots`
+
+#### isExpanded
+Type: `boolean`
+
+Default: `false`
 
 ## 🙏 Credits
 The component UI was insipired [listr](https://github.com/SamVerschueren/listr) and [listr2](https://github.com/cenk1cenk2/listr2) ❤️

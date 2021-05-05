@@ -37,7 +37,7 @@ const getPointer = (state: State) => (
 	</Text>
 );
 
-const ListItem: FC<{
+const Task: FC<{
 	label: string;
 	state?: State;
 	spinnerType?: string;
@@ -88,7 +88,7 @@ const ListItem: FC<{
 	);
 };
 
-ListItem.propTypes = {
+Task.propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.arrayOf(PropTypes.element),
 		PropTypes.element,
@@ -99,9 +99,9 @@ ListItem.propTypes = {
 	isExpanded: PropTypes.bool,
 };
 
-ListItem.defaultProps = {
+Task.defaultProps = {
 	state: 'pending',
 	spinnerType: 'dots',
 };
 
-export = ListItem;
+export = Task;

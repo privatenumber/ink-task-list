@@ -24,19 +24,16 @@
 	"scripts": {
 		"lint": "eslint .",
 		"build": "tsc",
-		"test": "CI=true jest tests/*.tsx && :",
+		"test": "CI=true jest tests/*.tsx",
 		"visual-test": "esno tests/VisualTest.tsx"
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm run build && lint-staged"
+			"pre-commit": "npm run build && lint-staged && npm test"
 		}
 	},
 	"lint-staged": {
-		"*.{js,ts}": [
-			"eslint",
-			"npm test"
-		]
+		"*.{js,ts}": "eslint"
 	},
 	"peerDependencies": {
 		"ink": ">=3.0.0",
