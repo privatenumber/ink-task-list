@@ -24,7 +24,7 @@
 	"scripts": {
 		"lint": "eslint .",
 		"build": "tsc",
-		"test": "jest tests/*.tsx && :",
+		"test": "CI=true jest tests/*.tsx && :",
 		"visual-test": "esno tests/VisualTest.tsx"
 	},
 	"husky": {

@@ -29,9 +29,9 @@ describe('basic use-cases', () => {
 		);
 
 		expect(lastFrame()).toMatchInlineSnapshot(`
-		"[90m◼[39m Item A
-		[90m◼[39m Item B
-		[90m◼[39m Item C"
+		"◼ Item A
+		◼ Item B
+		◼ Item C"
 	`);
 	});
 
@@ -41,7 +41,10 @@ describe('basic use-cases', () => {
 				state="pending" />,
 		);
 
-		expect(lastFrame()).toMatchInlineSnapshot('"[90m◼[39m Item pending"');
+		expect(lastFrame()).toMatchInlineSnapshot(
+			'"[90m◼[39m Item pending"',
+			'"◼ Item pending"',
+		);
 	});
 
 	test('loading state', () => {
@@ -50,7 +53,10 @@ describe('basic use-cases', () => {
 				state="loading" />,
 		);
 
-		expect(lastFrame()).toMatchInlineSnapshot('"[33m⠋[39m Item loading"');
+		expect(lastFrame()).toMatchInlineSnapshot(
+			'"[33m⠋[39m Item loading"',
+			'"⠋ Item loading"',
+		);
 	});
 
 	test('warning state', () => {
@@ -59,14 +65,20 @@ describe('basic use-cases', () => {
 				state="warning" />,
 		);
 
-		expect(lastFrame()).toMatchInlineSnapshot('"[33m⚠[39m Item warning"');
+		expect(lastFrame()).toMatchInlineSnapshot(
+			'"[33m⚠[39m Item warning"',
+			'"⚠ Item warning"',
+		);
 	});
 
 	test('error state', () => {
 		const { lastFrame } = render(<ListItem label="Item error"
 			state="error" />);
 
-		expect(lastFrame()).toMatchInlineSnapshot('"[31m✖[39m Item error"');
+		expect(lastFrame()).toMatchInlineSnapshot(
+			'"[31m✖[39m Item error"',
+			'"✖ Item error"',
+		);
 	});
 
 	test('success state', () => {
@@ -75,7 +87,10 @@ describe('basic use-cases', () => {
 				state="success" />,
 		);
 
-		expect(lastFrame()).toMatchInlineSnapshot('"[32m✔[39m Item success"');
+		expect(lastFrame()).toMatchInlineSnapshot(
+			'"[32m✔[39m Item success"',
+			'"✔ Item success"',
+		);
 	});
 
 	test('nested list', () => {
@@ -91,8 +106,8 @@ describe('basic use-cases', () => {
 		);
 
 		expect(lastFrame()).toMatchInlineSnapshot(`
-		"[33m❯[39m Item loading
-		  [90m◼[39m Item pending"
+		"❯ Item loading
+		  ◼ Item pending"
 	`);
 	});
 });
