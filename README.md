@@ -1,4 +1,4 @@
-# ink-task-runner <a href="https://npm.im/ink-task-runner"><img src="https://badgen.net/npm/v/ink-task-runner"></a> <a href="https://npm.im/ink-task-runner"><img src="https://badgen.net/npm/dm/ink-task-runner"></a> <a href="https://packagephobia.now.sh/result?p=ink-task-runner"><img src="https://packagephobia.now.sh/badge?p=ink-task-runner"></a> <a href="https://bundlephobia.com/result?p=ink-task-runner"><img src="https://badgen.net/bundlephobia/minzip/ink-task-runner"></a>
+# ink-task-runner <a href="https://npm.im/ink-task-runner"><img src="https://badgen.net/npm/v/ink-task-runner"></a> <!-- <a href="https://npm.im/ink-task-runner"><img src="https://badgen.net/npm/dm/ink-task-runner"></a> --> <a href="https://packagephobia.now.sh/result?p=ink-task-runner"><img src="https://packagephobia.now.sh/badge?p=ink-task-runner"></a>
 
 Task runner components for [Ink](https://github.com/vadimdemedes/ink)
 
