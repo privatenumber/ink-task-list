@@ -20,7 +20,7 @@ labels: 'bug: pending triage'
 
 ## Environment
 
-- ink-task-runner version:
+- ink-task-list version:
 - Webpack version:
 - Operating System:
 - Node version:
