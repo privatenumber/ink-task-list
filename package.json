@@ -1,17 +1,16 @@
 {
-	"name": "ink-task-runner",
+	"name": "ink-task-list",
 	"version": "0.0.0-semantic-release",
-	"description": "Render a Task runner in Ink",
+	"description": "Render a Task list in Ink",
 	"keywords": [
 		"ink",
 		"components",
-		"task runner",
 		"task list",
 		"task"
 	],
 	"license": "MIT",
-	"repository": "privatenumber/ink-task-runner",
-	"funding": "https://github.com/privatenumber/ink-task-runner?sponsor=1",
+	"repository": "privatenumber/ink-task-list",
+	"funding": "https://github.com/privatenumber/ink-task-list?sponsor=1",
 	"author": {
 		"name": "Hiroki Osame",
 		"email": "hiroki.osame@gmail.com"
