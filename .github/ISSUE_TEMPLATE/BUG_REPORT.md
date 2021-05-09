@@ -11,6 +11,8 @@ labels: 'bug: pending triage'
   What did you expect to happen?
 
   What happened instead?
+  
+  Do you have an error stack-trace?
 -->
 
 ## Reproduction
