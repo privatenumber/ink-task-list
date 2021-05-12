@@ -1,4 +1,6 @@
-import React, { FC, ReactElement, isValidElement } from 'react';
+import React, {
+	FC, ReactElement, isValidElement, Children,
+} from 'react';
 import PropTypes from 'prop-types';
 import { Text, Box } from 'ink';
 import figures from 'figures';
@@ -50,7 +52,7 @@ const Task: FC<{
 	isExpanded,
 	children,
 }) => {
-	const childrenArray = Array.isArray(children) ? children : [children];
+	const childrenArray = Children.toArray(children);
 	const listChildren = childrenArray.filter(node => isValidElement(node));
 	let icon = (state === 'loading')
 		? (
