@@ -1,23 +1,23 @@
-# ink-task-runner <a href="https://npm.im/ink-task-runner"><img src="https://badgen.net/npm/v/ink-task-runner"></a> <a href="https://npm.im/ink-task-runner"><img src="https://badgen.net/npm/dm/ink-task-runner"></a> <a href="https://packagephobia.now.sh/result?p=ink-task-runner"><img src="https://packagephobia.now.sh/badge?p=ink-task-runner"></a> <a href="https://bundlephobia.com/result?p=ink-task-runner"><img src="https://badgen.net/bundlephobia/minzip/ink-task-runner"></a>
+# ink-task-list <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/v/ink-task-list"></a> <!-- <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/dm/ink-task-list"></a> --> <a href="https://packagephobia.now.sh/result?p=ink-task-list"><img src="https://packagephobia.now.sh/badge?p=ink-task-list"></a>
 
-Task runner components for [Ink](https://github.com/vadimdemedes/ink)
+Task list components for [Ink](https://github.com/vadimdemedes/ink)
 
 <p align="center">
-  <img width="400" src=".github/task-runner.gif">
+  <img width="400" src=".github/task-list.gif">
 </p>
 
 <sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
 ## 🚀 Install
 ```sh
-npm i ink-task-runner
+npm i ink-task-list
 ```
 
 ## 🚦 Quick usage
 ```tsx
 import React from 'react';
 import { render } from 'ink';
-import { TaskList, Task } from 'ink-task-runner';
+import { TaskList, Task } from 'ink-task-list';
 
 render(
     <TaskList>
@@ -110,3 +110,5 @@ Default: `false`
 
 ## 🙏 Credits
 The component UI was insipired [listr](https://github.com/SamVerschueren/listr) and [listr2](https://github.com/cenk1cenk2/listr2) ❤️
+
+Big thanks to [Sindre Sorhus](https://github.com/sindresorhus) for making this package so easy to make.
