@@ -101,12 +101,25 @@ describe('basic use-cases', () => {
 						state="pending"
 					/>
 				</Task>
+				<Task
+					label="Nested va children prop"
+					isExpanded
+					// eslint-disable-next-line react/no-children-prop
+					children={
+						<Task
+							label="Item loading"
+							state="loading"
+						/>
+					}
+				/>
 			</TaskList>,
 		);
 
 		expect(lastFrame()).toMatchInlineSnapshot(`
 		"❯ Item loading
-		  ◼ Item pending"
+		  ◼ Item pending
+		❯ Nested va children prop
+		  ⠋ Item loading"
 	`);
 	});
 });

@@ -1,4 +1,6 @@
-import React, { FC, ReactElement, isValidElement, Children } from 'react';
+import React, {
+	FC, ReactElement, isValidElement, Children,
+} from 'react';
 import PropTypes from 'prop-types';
 import { Text, Box } from 'ink';
 import figures from 'figures';
