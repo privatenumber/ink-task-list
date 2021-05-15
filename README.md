@@ -21,37 +21,37 @@ import { TaskList, Task } from 'ink-task-list';
 
 render(
     <TaskList>
-        <!-- Pending state -->
+        {/* Pending state */}
         <Task
             label="Pending"
             state="pending"
         />
 
-        <!-- Loading state -->
+        {/* Loading state */}
         <Task
             label="Loading"
             state="loading"
         />
 
-        <!-- Success state -->
+        {/* Success state */}
         <Task
             label="Success"
             state="success"
         />
 
-        <!-- Warning state -->
+        {/* Warning state */}
         <Task
             label="Warning"
             state="warning"
         />
 
-        <!-- Error state -->
+        {/* Error state */}
         <Task
             label="Error"
             state="error"
         />
 
-        <!-- Item with children -->
+        {/* Item with children */}
         <Task
             label="Item with children"
             isExpanded
