@@ -1,4 +1,4 @@
-# ink-task-list <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/v/ink-task-list"></a> <!-- <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/dm/ink-task-list"></a> --> <a href="https://packagephobia.now.sh/result?p=ink-task-list"><img src="https://packagephobia.now.sh/badge?p=ink-task-list"></a>
+# ink-task-list <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/v/ink-task-list"></a> <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/dm/ink-task-list"></a> <a href="https://packagephobia.now.sh/result?p=ink-task-list"><img src="https://packagephobia.now.sh/badge?p=ink-task-list"></a>
 
 Task list components for [Ink](https://github.com/vadimdemedes/ink)
 
