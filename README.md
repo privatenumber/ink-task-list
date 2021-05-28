@@ -98,6 +98,16 @@ Type: `'pending'|'loading'|'success'|'warning'|'error'`
 
 Default: `pending`
 
+#### status
+Type: `string`
+
+Status of the task to show on the right of the `label`
+
+#### output
+Type: `string`
+
+Single-line output prefixed by `→` to show below the `label`.
+
 #### spinnerType
 Type: `string`
 
