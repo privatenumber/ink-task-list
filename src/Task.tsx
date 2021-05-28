@@ -123,6 +123,8 @@ Task.propTypes = {
 	]),
 	label: PropTypes.string.isRequired,
 	state: PropTypes.oneOf(['pending', 'loading', 'success', 'warning', 'error']),
+	status: PropTypes.string,
+	output: PropTypes.string,
 	spinnerType: PropTypes.oneOf(possibleSpinnerNames),
 	isExpanded: PropTypes.bool,
 };

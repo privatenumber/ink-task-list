@@ -148,7 +148,7 @@ render(
 			state="error"
 		/>
 
-		{/* <Text>
+		<Text>
 			=== Spinner types ===
 		</Text>
 		{
@@ -160,6 +160,6 @@ render(
 					state="loading"
 				/>
 			))
-		} */}
+		}
 	</TaskList>,
 );
