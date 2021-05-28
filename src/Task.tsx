@@ -42,12 +42,16 @@ const getPointer = (state: State) => (
 const Task: FC<{
 	label: string;
 	state?: State;
+	status?: string;
+	output?: string;
 	spinnerType?: string;
 	isExpanded?: boolean;
 	children?: ReactElement | ReactElement[];
 }> = ({
 	label,
 	state,
+	status,
+	output,
 	spinnerType,
 	isExpanded,
 	children,
@@ -77,7 +81,29 @@ const Task: FC<{
 				<Text>
 					{ label }
 				</Text>
+				{
+					status
+						? (
+							<Box marginLeft={1}>
+								<Text dimColor>
+									[{status}]
+								</Text>
+							</Box>
+						)
+						: undefined
+				}
 			</Box>
+			{
+				output
+					? (
+						<Box marginLeft={2}>
+							<Text color="gray">
+								{ `${figures.arrowRight} ${output}` }
+							</Text>
+						</Box>
+					)
+					: undefined
+			}
 			{ (isExpanded && listChildren.length > 0) && (
 				<Box
 					flexDirection="column"
