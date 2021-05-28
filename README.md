@@ -106,7 +106,7 @@ Status of the task to show on the right of the `label`
 #### output
 Type: `string`
 
-Single-line output prefixed by `→` to show below the `label`.
+Single-line output prefixed by `→` to show below the `label`
 
 #### spinnerType
 Type: `string`
