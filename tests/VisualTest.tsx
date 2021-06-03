@@ -32,6 +32,64 @@ render(
 		/>
 
 		<Text>
+			=== States w/ status ===
+		</Text>
+		<Task
+			label="Pending"
+			state="pending"
+			status="waiting on ..."
+		/>
+		<Task
+			label="Loading"
+			state="loading"
+			status="10 MB/s"
+		/>
+		<Task
+			label="Success"
+			state="success"
+			status="1.3s"
+		/>
+		<Task
+			label="Warning"
+			state="warning"
+			status="skipped"
+		/>
+		<Task
+			label="Error"
+			state="error"
+			status="failed"
+		/>
+
+		<Text>
+			=== States w/ output ===
+		</Text>
+		<Task
+			label="Pending"
+			state="pending"
+			output="Press Enter key"
+		/>
+		<Task
+			label="Loading"
+			state="loading"
+			output="Building xyz..."
+		/>
+		<Task
+			label="Success"
+			state="success"
+			output="Completed 6/6 tasks!"
+		/>
+		<Task
+			label="Warning"
+			state="warning"
+			output="Invalid type"
+		/>
+		<Task
+			label="Error"
+			state="error"
+			output="Failed to parse input"
+		/>
+
+		<Text>
 			=== Nested ===
 		</Text>
 
