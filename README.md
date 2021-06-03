@@ -84,11 +84,6 @@ Pass in list of Tasks
 
 Represents each task.
 
-#### children
-Type: `ReactNode | ReactNode[]`
-
-Pass in one or more `<Task>` components
-
 #### label
 Type: `string`
 
@@ -98,25 +93,41 @@ Type: `'pending'|'loading'|'success'|'warning'|'error'`
 
 Default: `pending`
 
+<img src=".github/states.gif" width="216">
+
 #### status
 Type: `string`
 
 Status of the task to show on the right of the `label`
+
+<img src=".github/states-w-status.gif" width="216">
 
 #### output
 Type: `string`
 
 Single-line output prefixed by `→` to show below the `label`
 
+<img src=".github/states-w-output.gif" width="216">
+
 #### spinnerType
 Type: `string`
 
 Default: `dots`
 
+Spinner type used for loading state. See [cli-spinners](https://github.com/sindresorhus/cli-spinners) for available types.
 #### isExpanded
 Type: `boolean`
 
 Default: `false`
+
+Whether or not to show the children.
+
+#### children
+Type: `ReactNode | ReactNode[]`
+
+Pass in one or more `<Task>` components
+
+<img src=".github/nested.gif" width="216">
 
 ## 🙏 Credits
 The component UI was insipired [listr](https://github.com/SamVerschueren/listr) and [listr2](https://github.com/cenk1cenk2/listr2) ❤️
