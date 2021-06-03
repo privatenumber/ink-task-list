@@ -32,7 +32,7 @@
 		}
 	},
 	"lint-staged": {
-		"*.{js,ts}": "eslint"
+		"*.{js,ts,tsx}": "eslint"
 	},
 	"peerDependencies": {
 		"ink": ">=3.0.0",

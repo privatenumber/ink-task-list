@@ -1,4 +1,4 @@
-# ink-task-list <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/v/ink-task-list"></a> <!-- <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/dm/ink-task-list"></a> --> <a href="https://packagephobia.now.sh/result?p=ink-task-list"><img src="https://packagephobia.now.sh/badge?p=ink-task-list"></a>
+# ink-task-list <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/v/ink-task-list"></a> <a href="https://npm.im/ink-task-list"><img src="https://badgen.net/npm/dm/ink-task-list"></a> <a href="https://packagephobia.now.sh/result?p=ink-task-list"><img src="https://packagephobia.now.sh/badge?p=ink-task-list"></a>
 
 Task list components for [Ink](https://github.com/vadimdemedes/ink)
 
@@ -21,37 +21,37 @@ import { TaskList, Task } from 'ink-task-list';
 
 render(
     <TaskList>
-        <!-- Pending state -->
+        {/* Pending state */}
         <Task
             label="Pending"
             state="pending"
         />
 
-        <!-- Loading state -->
+        {/* Loading state */}
         <Task
             label="Loading"
             state="loading"
         />
 
-        <!-- Success state -->
+        {/* Success state */}
         <Task
             label="Success"
             state="success"
         />
 
-        <!-- Warning state -->
+        {/* Warning state */}
         <Task
             label="Warning"
             state="warning"
         />
 
-        <!-- Error state -->
+        {/* Error state */}
         <Task
             label="Error"
             state="error"
         />
 
-        <!-- Item with children -->
+        {/* Item with children */}
         <Task
             label="Item with children"
             isExpanded
@@ -84,11 +84,6 @@ Pass in list of Tasks
 
 Represents each task.
 
-#### children
-Type: `ReactNode | ReactNode[]`
-
-Pass in one or more `<Task>` components
-
 #### label
 Type: `string`
 
@@ -98,15 +93,41 @@ Type: `'pending'|'loading'|'success'|'warning'|'error'`
 
 Default: `pending`
 
+<img src=".github/states.gif" width="216">
+
+#### status
+Type: `string`
+
+Status of the task to show on the right of the `label`
+
+<img src=".github/states-w-status.gif" width="216">
+
+#### output
+Type: `string`
+
+Single-line output prefixed by `→` to show below the `label`
+
+<img src=".github/states-w-output.gif" width="216">
+
 #### spinnerType
 Type: `string`
 
 Default: `dots`
 
+Spinner type used for loading state. See [cli-spinners](https://github.com/sindresorhus/cli-spinners) for available types.
 #### isExpanded
 Type: `boolean`
 
 Default: `false`
+
+Whether or not to show the children.
+
+#### children
+Type: `ReactNode | ReactNode[]`
+
+Pass in one or more `<Task>` components
+
+<img src=".github/nested.gif" width="216">
 
 ## 🙏 Credits
 The component UI was insipired [listr](https://github.com/SamVerschueren/listr) and [listr2](https://github.com/cenk1cenk2/listr2) ❤️

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, Text } from 'ink';
+import { render, Text, Newline } from 'ink';
 import spinners from 'cli-spinners';
 import { TaskList, Task } from '../src/index';
 
@@ -31,32 +31,107 @@ render(
 			state="error"
 		/>
 
+		<Newline />
+
+		<Text>
+			=== States with status ===
+		</Text>
+		<Task
+			label="Pending"
+			state="pending"
+			status="waiting on ..."
+		/>
+		<Task
+			label="Loading"
+			state="loading"
+			status="10 MB/s"
+		/>
+		<Task
+			label="Success"
+			state="success"
+			status="1.3s"
+		/>
+		<Task
+			label="Warning"
+			state="warning"
+			status="skipped"
+		/>
+		<Task
+			label="Error"
+			state="error"
+			status="failed"
+		/>
+
+		<Newline />
+
+		<Text>
+			=== States with output ===
+		</Text>
+		<Task
+			label="Pending"
+			state="pending"
+			output="Press Enter key"
+		/>
+		<Task
+			label="Loading"
+			state="loading"
+			output="Building xyz..."
+		/>
+		<Task
+			label="Success"
+			state="success"
+			output="Completed 6/6 tasks!"
+		/>
+		<Task
+			label="Warning"
+			state="warning"
+			output="Invalid type"
+		/>
+		<Task
+			label="Error"
+			state="error"
+			output="Failed to parse input"
+		/>
+
+		<Newline />
+
 		<Text>
 			=== Nested ===
 		</Text>
 
 		<Task
-			label="Item A"
-			state="error"
+			label="Parent"
 			isExpanded
 		>
 			<Task
-				label="Item AA"
+				label="Child warning"
+				state="warning"
 			/>
 			<Task
-				label="Item AB"
+				label="Child error"
+				state="error"
+			/>
+			<Task
+				label="Child success"
+				state="success"
+			/>
+			<Task
+				label="Child parent"
 				isExpanded
 			>
 				<Task
-					label="Item ABA"
+					label="Grandchild loading"
 					state="loading"
 				/>
 			</Task>
+			<Task
+				label="Child pending"
+				state="pending"
+			/>
 		</Task>
 
 		<Task
-			label="Item B"
-			state="warning"
+			label="Parent with collapsed children"
 		>
 			<Task
 				label="Item BA"
@@ -85,10 +160,8 @@ render(
 				</Task>
 			</Task>
 		</Task>
-		<Task
-			label="Item C"
-			state="error"
-		/>
+
+		<Newline />
 
 		<Text>
 			=== Spinner types ===
