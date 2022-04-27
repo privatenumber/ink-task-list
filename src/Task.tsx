@@ -1,11 +1,10 @@
-import React, {
-	FC, ReactElement, isValidElement, Children,
-} from 'react';
+import React, { isValidElement, Children } from 'react';
+import type { FC, ReactElement } from 'react';
 import PropTypes from 'prop-types';
 import { Text, Box } from 'ink';
 import figures from 'figures';
 import Spinner from 'ink-spinner';
-import spinners, { SpinnerName } from 'cli-spinners';
+import spinners, { type SpinnerName } from 'cli-spinners';
 
 const possibleSpinnerNames = Object.keys(spinners).filter(
 	spinnerName => spinnerName !== 'default',
