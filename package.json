@@ -45,7 +45,7 @@
 		"prop-types": "^15.7.2"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.19.1",
+		"@pvtnbr/eslint-config": "^0.19.3",
 		"@types/jest": "^26.0.23",
 		"@types/react": "^17.0.4",
 		"es-jest": "^1.2.0",
