@@ -2,10 +2,10 @@ lockfileVersion: 5.3
 
 specifiers:
   '@pvtnbr/eslint-config': ^0.19.3
-  '@types/jest': ^26.0.23
+  '@types/jest': ^26.0.24
   '@types/react': ^17.0.4
   cli-spinners: ^2.6.0
-  es-jest: ^1.2.0
+  es-jest: ^1.5.0
   eslint: ^8.14.0
   esno: ^0.5.0
   figures: ^3.2.0
@@ -28,9 +28,9 @@ dependencies:
 
 devDependencies:
   '@pvtnbr/eslint-config': 0.19.3_eslint@8.14.0+typescript@4.2.4
-  '@types/jest': 26.0.23
+  '@types/jest': 26.0.24
   '@types/react': 17.0.4
-  es-jest: 1.2.0
+  es-jest: 1.5.0
   eslint: 8.14.0
   esno: 0.5.0
   husky: 4.3.8
@@ -703,8 +703,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/26.0.23:
-    resolution: {integrity: sha512-ZHLmWMJ9jJ9PTiT58juykZpL7KjwJywFN3Rr2pTSkyQfydf/rk22yS7W8p5DaVUMQ2BQC7oYiU3FjbTM/mYrOA==}
+  /@types/jest/26.0.24:
+    resolution: {integrity: sha512-E/X5Vib8BWqZNRlDxj9vYXhsDwPYbPINqKF9BsnSoon4RQ0D9moEuLD8txgyypFLH7J4+Lho9Nr/c8H0Fi+17w==}
     dependencies:
       jest-diff: 26.6.2
       pretty-format: 26.6.2
@@ -1824,8 +1824,8 @@ packages:
       unbox-primitive: 1.0.2
     dev: true
 
-  /es-jest/1.2.0:
-    resolution: {integrity: sha512-6p1ekiZyku8YTulvjC2prPdY64tKlPcn42U9aP8cUj/SUR4D0Wb15GdifvDdrdLhz/QP5hLcJ25yxd2K2mLceA==}
+  /es-jest/1.5.0:
+    resolution: {integrity: sha512-LC6IKr3IqmdYeFCnmi53vktU4GB0CAWFQ2HPi8hoab5jvtaBy62P7mFNnARw5Es3hgF99qiB0c/0N0eBsk8Cww==}
     engines: {node: '>=10'}
     dependencies:
       esbuild: 0.9.7
@@ -2505,6 +2505,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -4176,6 +4177,7 @@ packages:
 
   /node-notifier/8.0.2:
     resolution: {integrity: sha512-oJP/9NAdd9+x2Q+rfphB2RJCHjod70RcRLjosiPMMu5gjIfwVnOUGq2nbTjTUbmy0DJ/tFIVT30+Qe3nzl4TJg==}
+    requiresBuild: true
     dependencies:
       growly: 1.3.0
       is-wsl: 2.2.0
