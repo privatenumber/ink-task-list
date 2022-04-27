@@ -61,7 +61,7 @@ render(
                 state="loading"
             />
         </Task>
-    </TaskList>
+    </TaskList>,
 );
 ```
 
