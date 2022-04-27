@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { Box } from 'ink';
 import PropTypes from 'prop-types';
 
-const TaskList: FC = ({ children }) => (
+const TaskList: FC<{
+	children: ReactNode | ReactNode[];
+}> = ({ children }) => (
 	<Box flexDirection="column">
 		{ children }
 	</Box>
