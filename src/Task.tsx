@@ -1,14 +1,8 @@
 import React, { isValidElement, Children } from 'react';
 import type { FC, ReactElement } from 'react';
-import PropTypes from 'prop-types';
 import { Text, Box } from 'ink';
-import figures from 'figures';
-import Spinner from 'ink-spinner';
-import spinners, { type SpinnerName } from 'cli-spinners';
-
-const possibleSpinnerNames = Object.keys(spinners).filter(
-	spinnerName => spinnerName !== 'default',
-) as SpinnerName[];
+import figures from './figures';
+import RenderSpinner, { type Spinner } from './RenderSpinner';
 
 type State = 'pending' | 'loading' | 'success' | 'warning' | 'error';
 
@@ -43,15 +37,15 @@ const Task: FC<{
 	state?: State;
 	status?: string;
 	output?: string;
-	spinnerType?: string;
+	spinner: Spinner;
 	isExpanded?: boolean;
 	children?: ReactElement | ReactElement[];
 }> = ({
 	label,
-	state,
+	state = 'pending',
 	status,
 	output,
-	spinnerType,
+	spinner,
 	isExpanded,
 	children,
 }) => {
@@ -60,7 +54,7 @@ const Task: FC<{
 	let icon = (state === 'loading')
 		? (
 			<Text color="yellow">
-				<Spinner type={spinnerType as SpinnerName} />
+				<RenderSpinner spinner={spinner} />
 			</Text>
 		)
 		: getSymbol(state);
@@ -113,24 +107,6 @@ const Task: FC<{
 			) }
 		</Box>
 	);
-};
-
-Task.propTypes = {
-	children: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.element),
-		PropTypes.element,
-	]),
-	label: PropTypes.string.isRequired,
-	state: PropTypes.oneOf(['pending', 'loading', 'success', 'warning', 'error']),
-	status: PropTypes.string,
-	output: PropTypes.string,
-	spinnerType: PropTypes.oneOf(possibleSpinnerNames),
-	isExpanded: PropTypes.bool,
-};
-
-Task.defaultProps = {
-	state: 'pending',
-	spinnerType: 'dots',
 };
 
 export default Task;
