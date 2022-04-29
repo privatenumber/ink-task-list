@@ -18,4 +18,4 @@ TaskList.propTypes = {
 	]).isRequired,
 };
 
-export = TaskList;
+export default TaskList;

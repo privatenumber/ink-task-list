@@ -133,4 +133,4 @@ Task.defaultProps = {
 	spinnerType: 'dots',
 };
 
-export = Task;
+export default Task;
