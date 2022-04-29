@@ -1,3 +1,5 @@
+// Fork of https://github.com/vadimdemedes/ink-spinner
+
 import React, { useState, useEffect } from 'react';
 import type { FC } from 'react';
 import { Text } from 'ink';
@@ -10,13 +12,13 @@ export type Spinner = {
 const RenderSpinner: FC<{
 	spinner: Spinner;
 }> = ({ spinner }) => {
-	const [frame, setFrame] = useState(0);
+	const [frameIndex, setFrameIndex] = useState(0);
 
 	useEffect(() => {
 		const timer = setInterval(() => {
-			setFrame((previousFrame) => {
-				const isLastFrame = previousFrame === spinner.frames.length - 1;
-				return isLastFrame ? 0 : previousFrame + 1;
+			setFrameIndex((currentFrameIndex) => {
+				const isLastFrame = currentFrameIndex === (spinner.frames.length - 1);
+				return isLastFrame ? 0 : currentFrameIndex + 1;
 			});
 		}, spinner.interval);
 
@@ -25,7 +27,7 @@ const RenderSpinner: FC<{
 		};
 	}, [spinner]);
 
-	return <Text>{spinner.frames[frame]}</Text>;
+	return <Text>{spinner.frames[frameIndex]}</Text>;
 };
 
 export default RenderSpinner;
