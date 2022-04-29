@@ -4,7 +4,10 @@ import { Text, Box } from 'ink';
 import figures from './figures';
 import RenderSpinner, { type Spinner } from './RenderSpinner';
 
-type State = 'pending' | 'loading' | 'success' | 'warning' | 'error';
+type StateLoading = 'loading';
+type StateOthers = 'pending' | 'success' | 'warning' | 'error';
+
+type State = StateLoading | StateOthers;
 
 const getSymbol = (state: State) => {
 	if (state === 'warning') {
@@ -32,15 +35,21 @@ const getPointer = (state: State) => (
 	</Text>
 );
 
-const Task: FC<{
+type BaseProps = {
 	label: string;
-	state?: State;
 	status?: string;
 	output?: string;
-	spinner: Spinner;
 	isExpanded?: boolean;
 	children?: ReactElement | ReactElement[];
-}> = ({
+};
+
+const Task: FC<BaseProps & ({
+	state?: StateOthers;
+	spinner?: Spinner;
+} | {
+	state: StateLoading;
+	spinner: Spinner;
+})> = ({
 	label,
 	state = 'pending',
 	status,

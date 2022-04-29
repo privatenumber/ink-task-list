@@ -28,15 +28,12 @@ describe('basic use-cases', ({ test }) => {
 		const { lastFrame, unmount } = render(
 			<TaskList>
 				<Task
-					spinner={spinners.dots}
 					label="Item A"
 				/>
 				<Task
-					spinner={spinners.dots}
 					label="Item B"
 				/>
 				<Task
-					spinner={spinners.dots}
 					label="Item C"
 				/>
 			</TaskList>,
@@ -55,7 +52,6 @@ describe('basic use-cases', ({ test }) => {
 	test('pending state', async () => {
 		const { lastFrame, unmount } = render(
 			<Task
-				spinner={spinners.dots}
 				label="Item pending"
 				state="pending"
 			/>,
@@ -68,9 +64,9 @@ describe('basic use-cases', ({ test }) => {
 	test('loading state', async () => {
 		const { lastFrame, unmount } = render(
 			<Task
-				spinner={spinners.dots}
 				label="Item loading"
 				state="loading"
+				spinner={spinners.dots}
 			/>,
 		);
 
@@ -81,7 +77,6 @@ describe('basic use-cases', ({ test }) => {
 	test('warning state', async () => {
 		const { lastFrame, unmount } = render(
 			<Task
-				spinner={spinners.dots}
 				label="Item warning"
 				state="warning"
 			/>,
@@ -94,7 +89,6 @@ describe('basic use-cases', ({ test }) => {
 	test('error state', async () => {
 		const { lastFrame, unmount } = render(
 			<Task
-				spinner={spinners.dots}
 				label="Item error"
 				state="error"
 			/>,
@@ -107,7 +101,6 @@ describe('basic use-cases', ({ test }) => {
 	test('success state', async () => {
 		const { lastFrame, unmount } = render(
 			<Task
-				spinner={spinners.dots}
 				label="Item success"
 				state="success"
 			/>,
@@ -127,13 +120,11 @@ describe('basic use-cases', ({ test }) => {
 					isExpanded
 				>
 					<Task
-						spinner={spinners.dots}
 						label="Item pending"
 						state="pending"
 					/>
 				</Task>
 				<Task
-					spinner={spinners.dots}
 					label="Nested va children prop"
 					isExpanded
 					// eslint-disable-next-line react/no-children-prop
