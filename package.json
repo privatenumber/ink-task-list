@@ -1,0 +1,70 @@
+{
+	"name": "ink-task-list",
+	"version": "0.0.0-semantic-release",
+	"description": "Render a Task list in Ink",
+	"keywords": [
+		"ink",
+		"components",
+		"task list",
+		"task"
+	],
+	"license": "MIT",
+	"repository": "privatenumber/ink-task-list",
+	"funding": "https://github.com/privatenumber/ink-task-list?sponsor=1",
+	"author": {
+		"name": "Hiroki Osame",
+		"email": "hiroki.osame@gmail.com"
+	},
+	"files": [
+		"bin",
+		"dist"
+	],
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"require": "./dist/index.js",
+		"import": "./dist/index.mjs",
+		"types": "./dist/index.d.ts"
+	},
+	"scripts": {
+		"lint": "eslint --cache .",
+		"build": "pkgroll --minify --target node12.19",
+		"pretest": "npm run build",
+		"test": "CI=true esno tests/index.spec.tsx",
+		"visual-test": "esno tests/VisualTest.tsx"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run build && lint-staged && npm test"
+		}
+	},
+	"lint-staged": {
+		"*.{js,ts,tsx}": "eslint --cache"
+	},
+	"peerDependencies": {
+		"ink": ">=3.0.0",
+		"react": ">=16.8.0"
+	},
+	"devDependencies": {
+		"@pvtnbr/eslint-config": "^0.19.3",
+		"@types/react": "^17.0.44",
+		"cli-spinners": "^2.6.1",
+		"eslint": "^8.14.0",
+		"esno": "^0.14.1",
+		"husky": "^4.3.8",
+		"ink": "^3.2.0",
+		"ink-testing-library": "^2.1.0",
+		"is-unicode-supported": "^1.2.0",
+		"lint-staged": "^10.5.4",
+		"manten": "^0.0.3",
+		"outdent": "^0.8.0",
+		"pkgroll": "^1.1.1",
+		"react": "^17.0.2",
+		"tinyspy": "^0.3.2",
+		"typescript": "^4.6.3"
+	},
+	"eslintConfig": {
+		"extends": "@pvtnbr"
+	}
+}
