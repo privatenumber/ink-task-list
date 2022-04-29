@@ -19,14 +19,14 @@
 		"bin",
 		"dist"
 	],
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
-    "exports": {
-        "require": "./dist/index.js",
-        "import": "./dist/index.mjs",
-        "types": "./dist/index.d.ts"
-    },
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"require": "./dist/index.js",
+		"import": "./dist/index.mjs",
+		"types": "./dist/index.d.ts"
+	},
 	"scripts": {
 		"lint": "eslint --cache .",
 		"build": "pkgroll",
@@ -62,7 +62,7 @@
 		"lint-staged": "^10.5.4",
 		"manten": "^0.0.3",
 		"outdent": "^0.8.0",
-		"pkgroll": "^1.0.5",
+		"pkgroll": "^1.1.1",
 		"react": "^17.0.2",
 		"tinyspy": "^0.3.2",
 		"typescript": "^4.6.3"
