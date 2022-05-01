@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@pvtnbr/eslint-config': ^0.19.3
+  '@pvtnbr/eslint-config': ^0.20.0
   '@types/react': ^17.0.44
   cli-spinners: ^2.6.1
   eslint: ^8.14.0
@@ -19,7 +19,7 @@ specifiers:
   typescript: ^4.6.3
 
 devDependencies:
-  '@pvtnbr/eslint-config': 0.19.3_eslint@8.14.0+typescript@4.6.3
+  '@pvtnbr/eslint-config': 0.20.0_eslint@8.14.0+typescript@4.6.3
   '@types/react': 17.0.44
   cli-spinners: 2.6.1
   eslint: 8.14.0
@@ -123,8 +123,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@pvtnbr/eslint-config/0.19.3_eslint@8.14.0+typescript@4.6.3:
-    resolution: {integrity: sha512-hfemAYdPk2bhbgBhB+gh827Z8mxby9jQTE+7nLA2DoMbHwd6gchQf+iZkZnrUNICYYEuR1kZ0Uw6bc/ctsJxEA==}
+  /@pvtnbr/eslint-config/0.20.0_eslint@8.14.0+typescript@4.6.3:
+    resolution: {integrity: sha512-drxIC5fvFYCWbnK6xlqzzv2ZZdpbi2OKburJCs+63MrXwr/dq+A75ewZeVMF2L0BFzQQ/Xtr8x7plCL64atlLg==}
     peerDependencies:
       eslint: ^7.15.0 || ^8.0.0
     dependencies:
@@ -1337,7 +1337,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.14.0
       estraverse: 5.3.0
-      jsx-ast-utils: 3.2.2
+      jsx-ast-utils: 3.3.0
       minimatch: 3.1.2
       object.entries: 1.1.5
       object.fromentries: 2.0.5
@@ -2236,8 +2236,8 @@ packages:
       semver: 7.3.7
     dev: true
 
-  /jsx-ast-utils/3.2.2:
-    resolution: {integrity: sha512-HDAyJ4MNQBboGpUnHAVUNJs6X0lh058s6FuixsFGP7MgJYpD6Vasd6nzSG5iIfXu1zAYlHJ/zsOKNlrenTUBnw==}
+  /jsx-ast-utils/3.3.0:
+    resolution: {integrity: sha512-XzO9luP6L0xkxwhIJMTJQpZo/eeN60K08jHdexfD569AGxeNug6UketeHXEhROoM8aR7EcUoOQmIhcJQjcuq8Q==}
     engines: {node: '>=4.0'}
     dependencies:
       array-includes: 3.1.4

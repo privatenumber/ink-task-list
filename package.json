@@ -47,7 +47,7 @@
 		"react": ">=16.8.0"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.19.3",
+		"@pvtnbr/eslint-config": "^0.20.0",
 		"@types/react": "^17.0.44",
 		"cli-spinners": "^2.6.1",
 		"eslint": "^8.14.0",
