@@ -117,8 +117,8 @@ Single-line output prefixed by `→` to show below the `label`
 Type:
 ```ts
 type Spinner = {
-	interval: number;
-	frames: string[];
+    interval: number
+    frames: string[]
 }
 ```
 
