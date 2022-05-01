@@ -1,16 +1,13 @@
 import React, { isValidElement, Children } from 'react';
 import type { FC, ReactElement } from 'react';
-import PropTypes from 'prop-types';
 import { Text, Box } from 'ink';
-import figures from 'figures';
-import Spinner from 'ink-spinner';
-import spinners, { type SpinnerName } from 'cli-spinners';
+import figures from './figures';
+import RenderSpinner, { type Spinner } from './RenderSpinner';
 
-const possibleSpinnerNames = Object.keys(spinners).filter(
-	spinnerName => spinnerName !== 'default',
-) as SpinnerName[];
+type StateLoading = 'loading';
+type StateOthers = 'pending' | 'success' | 'warning' | 'error';
 
-type State = 'pending' | 'loading' | 'success' | 'warning' | 'error';
+type State = StateLoading | StateOthers;
 
 const getSymbol = (state: State) => {
 	if (state === 'warning') {
@@ -38,20 +35,26 @@ const getPointer = (state: State) => (
 	</Text>
 );
 
-const Task: FC<{
+type BaseProps = {
 	label: string;
-	state?: State;
 	status?: string;
 	output?: string;
-	spinnerType?: string;
 	isExpanded?: boolean;
 	children?: ReactElement | ReactElement[];
-}> = ({
+};
+
+const Task: FC<BaseProps & ({
+	state?: StateOthers;
+	spinner?: Spinner;
+} | {
+	state: StateLoading;
+	spinner: Spinner;
+})> = ({
 	label,
-	state,
+	state = 'pending',
 	status,
 	output,
-	spinnerType,
+	spinner,
 	isExpanded,
 	children,
 }) => {
@@ -60,7 +63,7 @@ const Task: FC<{
 	let icon = (state === 'loading')
 		? (
 			<Text color="yellow">
-				<Spinner type={spinnerType as SpinnerName} />
+				<RenderSpinner spinner={spinner} />
 			</Text>
 		)
 		: getSymbol(state);
@@ -113,24 +116,6 @@ const Task: FC<{
 			) }
 		</Box>
 	);
-};
-
-Task.propTypes = {
-	children: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.element),
-		PropTypes.element,
-	]),
-	label: PropTypes.string.isRequired,
-	state: PropTypes.oneOf(['pending', 'loading', 'success', 'warning', 'error']),
-	status: PropTypes.string,
-	output: PropTypes.string,
-	spinnerType: PropTypes.oneOf(possibleSpinnerNames),
-	isExpanded: PropTypes.bool,
-};
-
-Task.defaultProps = {
-	state: 'pending',
-	spinnerType: 'dots',
 };
 
 export default Task;

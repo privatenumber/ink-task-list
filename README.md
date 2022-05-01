@@ -18,6 +18,7 @@ npm i ink-task-list
 import React from 'react';
 import { render } from 'ink';
 import { TaskList, Task } from 'ink-task-list';
+import spinners from 'cli-spinners';
 
 render(
     <TaskList>
@@ -31,6 +32,7 @@ render(
         <Task
             label="Loading"
             state="loading"
+            spinner={spinners.dots}
         />
 
         {/* Success state */}
@@ -59,6 +61,7 @@ render(
             <Task
                 label="Loading"
                 state="loading"
+                spinner={spinners.dots}
             />
         </Task>
     </TaskList>,
@@ -88,6 +91,7 @@ Represents each task.
 Type: `string`
 
 Required
+
 #### state
 Type: `'pending'|'loading'|'success'|'warning'|'error'`
 
@@ -109,12 +113,19 @@ Single-line output prefixed by `→` to show below the `label`
 
 <img src=".github/states-w-output.gif" width="216">
 
-#### spinnerType
-Type: `string`
+#### spinner
+Type:
+```ts
+type Spinner = {
+    interval: number
+    frames: string[]
+}
+```
 
-Default: `dots`
+Required if state is `loading`
 
-Spinner type used for loading state. See [cli-spinners](https://github.com/sindresorhus/cli-spinners) for available types.
+Spinner data used for loading state. Pass in a spinner from [cli-spinners](https://github.com/sindresorhus/cli-spinners) for convenience.
+
 #### isExpanded
 Type: `boolean`
 
@@ -131,5 +142,3 @@ Pass in one or more `<Task>` components
 
 ## 🙏 Credits
 The component UI was inspired [listr](https://github.com/SamVerschueren/listr) and [listr2](https://github.com/cenk1cenk2/listr2) ❤️
-
-Big thanks to [Sindre Sorhus](https://github.com/sindresorhus) for making this package so easy to make.

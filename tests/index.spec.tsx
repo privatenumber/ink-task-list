@@ -3,6 +3,7 @@ import { render } from 'ink-testing-library';
 import { describe, expect } from 'manten';
 import outdent from 'outdent';
 import { spyOn } from 'tinyspy';
+import spinners from 'cli-spinners';
 import { TaskList, Task } from '../dist/index.js';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -10,11 +11,8 @@ const noop = () => {};
 
 describe('error cases', ({ test }) => {
 	test('no empty list', () => {
-		const consoleErrorSpy = spyOn(console, 'error', noop);
 		// @ts-expect-error testing error throwing
 		render(<TaskList />);
-		expect(consoleErrorSpy.callCount).toBe(1);
-		consoleErrorSpy.restore();
 	});
 
 	test('no text child', () => {
@@ -26,12 +24,18 @@ describe('error cases', ({ test }) => {
 });
 
 describe('basic use-cases', ({ test }) => {
-	test('renders list', () => {
+	test('renders list', async () => {
 		const { lastFrame, unmount } = render(
 			<TaskList>
-				<Task label="Item A" />
-				<Task label="Item B" />
-				<Task label="Item C" />
+				<Task
+					label="Item A"
+				/>
+				<Task
+					label="Item B"
+				/>
+				<Task
+					label="Item C"
+				/>
 			</TaskList>,
 		);
 
@@ -45,7 +49,7 @@ describe('basic use-cases', ({ test }) => {
 		unmount();
 	});
 
-	test('pending state', () => {
+	test('pending state', async () => {
 		const { lastFrame, unmount } = render(
 			<Task
 				label="Item pending"
@@ -57,11 +61,12 @@ describe('basic use-cases', ({ test }) => {
 		unmount();
 	});
 
-	test('loading state', () => {
+	test('loading state', async () => {
 		const { lastFrame, unmount } = render(
 			<Task
 				label="Item loading"
 				state="loading"
+				spinner={spinners.dots}
 			/>,
 		);
 
@@ -69,7 +74,7 @@ describe('basic use-cases', ({ test }) => {
 		unmount();
 	});
 
-	test('warning state', () => {
+	test('warning state', async () => {
 		const { lastFrame, unmount } = render(
 			<Task
 				label="Item warning"
@@ -81,17 +86,19 @@ describe('basic use-cases', ({ test }) => {
 		unmount();
 	});
 
-	test('error state', () => {
-		const { lastFrame, unmount } = render(<Task
-			label="Item error"
-			state="error"
-		/>);
+	test('error state', async () => {
+		const { lastFrame, unmount } = render(
+			<Task
+				label="Item error"
+				state="error"
+			/>,
+		);
 
 		expect(lastFrame()).toBe('✖ Item error');
 		unmount();
 	});
 
-	test('success state', () => {
+	test('success state', async () => {
 		const { lastFrame, unmount } = render(
 			<Task
 				label="Item success"
@@ -103,10 +110,11 @@ describe('basic use-cases', ({ test }) => {
 		unmount();
 	});
 
-	test('nested list', () => {
+	test('nested list', async () => {
 		const { lastFrame, unmount } = render(
 			<TaskList>
 				<Task
+					spinner={spinners.dots}
 					label="Item loading"
 					state="loading"
 					isExpanded
@@ -122,6 +130,7 @@ describe('basic use-cases', ({ test }) => {
 					// eslint-disable-next-line react/no-children-prop
 					children={
 						<Task
+							spinner={spinners.dots}
 							label="Item loading"
 							state="loading"
 						/>
