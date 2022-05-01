@@ -115,7 +115,7 @@ Single-line output prefixed by `→` to show below the `label`
 
 #### spinner
 Type:
-```
+```ts
 type Spinner = {
 	interval: number;
 	frames: string[];
@@ -142,5 +142,3 @@ Pass in one or more `<Task>` components
 
 ## 🙏 Credits
 The component UI was inspired [listr](https://github.com/SamVerschueren/listr) and [listr2](https://github.com/cenk1cenk2/listr2) ❤️
-
-Big thanks to [Sindre Sorhus](https://github.com/sindresorhus) for making this package so easy to make.
